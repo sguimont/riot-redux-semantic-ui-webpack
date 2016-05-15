@@ -1,6 +1,6 @@
 # Notes
 
-# Install
+## Install
 
 To run the application you need to run the fake server with json-server. 
 
@@ -17,7 +17,7 @@ cd semantic
 gulp build
 ```
 
-# Start
+## Start
 
 Run json-server
 
