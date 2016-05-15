@@ -8,17 +8,17 @@
     {
       "id": 1,
       "name": "Record video",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "name": "Add",
       "id": 2,
-      "isComplete": true
+      "isComplete": false
     },
     {
       "name": "test1",
       "id": 4,
-      "isComplete": false
+      "isComplete": true
     },
     {
       "name": "test2",
@@ -52,6 +52,14 @@
     {
       "name": "aaa",
       "id": 12
+    },
+    {
+      "name": "dfgdfg",
+      "id": 13
+    },
+    {
+      "name": "FFFF",
+      "id": 14
     }
   ]
 }

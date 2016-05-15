@@ -10,6 +10,7 @@ module.exports = {
 function loadTasks() {
   return function (dispatch, getState) {
     dispatch(toggleLoading(true));
+    dispatch(clearTasks());
     var request = new XMLHttpRequest();
     request.open('GET', 'http://localhost:3000/tasks', true);
     request.onload = function () {
@@ -24,6 +25,10 @@ function loadTasks() {
     }, 2000)
 
   }
+}
+
+function clearTasks() {
+  return {type: 'CLEAR_TASKS'}
 }
 
 function tasksLoaded(tasks) {

@@ -3,6 +3,8 @@
 var riot = require('riot');
 var redux = require('redux');
 var thunk = require('redux-thunk');
+
+require('riot-router');
 require('es6-shim');
 
 require('../semantic/dist/semantic.css');
@@ -13,10 +15,17 @@ require('./tags/task-list.tag');
 require('./tags/loading-indicator.tag');
 require('./tags/task-form.tag');
 require('./tags/error-message.tag');
+require('./tags/menu.tag');
+
+require('./tags/tasks.tag');
+
+require('./tags/not-found.tag');
 
 var reducer = function (state = {tasks: []}, action) {
   console.log(action);
   switch (action.type) {
+    case 'CLEAR_TASKS':
+      return Object.assign({}, state, {tasks: []});
     case 'TASKS_LOADED':
       return Object.assign({}, state, {tasks: action.data});
     case 'TOGGLE_LOADING':
@@ -42,13 +51,24 @@ var reducer = function (state = {tasks: []}, action) {
   }
 };
 
-// var reduxStore = redux.createStore(reducer)
 var createStoreWithMiddleware = redux.compose(
   redux.applyMiddleware(thunk)
 )(redux.createStore);
 
 var reduxStore = createStoreWithMiddleware(reducer);
+window.store = reduxStore;
+
+var Route = riot.router.Route;
+var DefaultRoute = riot.router.DefaultRoute;
+var NotFoundRoute = riot.router.NotFoundRoute;
+var RedirectRoute = riot.router.RedirectRoute;
+
+riot.router.routes([
+  new DefaultRoute({tag: 'tasks'}),
+  new NotFoundRoute({tag: 'not-found'})
+]);
 
 document.addEventListener('DOMContentLoaded', () => {
   riot.mount('todo-app', {store: reduxStore});
+  riot.router.start();
 });

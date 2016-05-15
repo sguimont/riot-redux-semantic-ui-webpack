@@ -20,6 +20,7 @@
     "redux-thunk": "^1.0.2",
     "require-dot-file": "^0.4.0",
     "riot": "^2.3.11",
+    "riot-router": "^0.7.3",
     "run-sequence": "^1.1.5",
     "semantic-ui": "^2.1.8",
     "yamljs": "^0.2.7"
