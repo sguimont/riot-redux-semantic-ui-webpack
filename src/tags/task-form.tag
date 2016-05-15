@@ -28,7 +28,6 @@
       let valid = jQuery('#task-form').form('is valid');
       if (valid) {
         this.opts.addtask(this.newTask.value);
-        this.newTask.value = '';
       }
     }
   </script>

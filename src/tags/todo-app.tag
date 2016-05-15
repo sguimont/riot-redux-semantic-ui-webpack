@@ -5,9 +5,9 @@
       <div class="sub header">Manage your daily tasks.</div>
     </h2>
     <error-message message={this.state.errorMessage} iserror={this.state.isError} hide={hideErrorMessage}></error-message>
-    <menu></menu>
+    <menu class="ui basic segment"></menu>
     <loading-indicator loading={this.state.isLoading}></loading-indicator>
-    <route class="ui container app content"></route>
+    <route class="ui basic segment"></route>
   </div>
 
   <script>
