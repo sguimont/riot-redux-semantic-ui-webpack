@@ -1,14 +1,15 @@
 'use strict';
 
-var riot = require('riot');
-var redux = require('redux');
-var thunk = require('redux-thunk');
-
-require('riot-router');
 require('es6-shim');
 
 require('../semantic/dist/semantic.css');
 require('imports?jQuery=jquery!../semantic/dist/semantic');
+
+var riot = require('riot');
+require('riot-router');
+
+var redux = require('redux');
+var thunk = require('redux-thunk');
 
 require('./tags/todo-app.tag');
 require('./tags/task-list.tag');
