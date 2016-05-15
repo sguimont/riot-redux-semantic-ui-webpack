@@ -1,3 +1,5 @@
+'use strict';
+
 var riot = require('riot');
 var redux = require('redux');
 var thunk = require('redux-thunk');

@@ -1,5 +1,5 @@
 <task-form>
-  <form class="ui form segment" onsubmit={handleSubmit}>
+  <form id="task-form" class="ui form segment" onsubmit={handleSubmit}>
     <p>Add a new task</p>
     <div class="inline fields">
       <div class="eight wide field">
@@ -13,7 +13,7 @@
   <script>
 
     this.on('mount', function () {
-      jQuery('.ui.form')
+      jQuery('#task-form')
         .form({
           inline: true,
           on: 'blur',
@@ -25,11 +25,10 @@
 
     handleSubmit()
     {
-      let valid = jQuery('.ui.form').form('is valid');
+      let valid = jQuery('#task-form').form('is valid');
       if (valid) {
         this.opts.addtask(this.newTask.value);
-        jQuery('.ui.form').form('reset');
-        jQuery('.ui.form').form('clear');
+        this.newTask.value = '';
       }
     }
   </script>
